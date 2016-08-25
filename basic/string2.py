@@ -8,6 +8,8 @@
 
 # Additional basic string exercises
 
+import re
+
 
 # D. verbing
 # Given a string, if its length is at least 3,
@@ -18,7 +20,11 @@
 # Return the resulting string.
 def verbing(s):
     # +++your code here+++
-    return
+    if len(s) >= 3:
+        if s[-3:] == 'ing':
+            return s + 'ly'
+        return s + 'ing'
+    return s
 
 
 # E. not_bad
@@ -29,9 +35,10 @@ def verbing(s):
 # Return the resulting string.
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
+
 def not_bad(s):
     # +++your code here+++
-    return
+    return re.sub(r'not.*bad', 'good', s)
 
 
 # F. front_back
