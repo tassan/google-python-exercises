@@ -50,8 +50,12 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
     # +++your code here+++
-    return
-
+    if len(a) % 2 == 0:
+        if len(b) % 2 == 0:
+            return a[:len(a)//2] + b[:len(b)//2] + a[len(a)//2:] + b[len(b)//2:]
+        return
+    else:
+        return a[:len(a)-2] + b[:len(b)//2] + a[len(a)//2:] + b[len(b)//2:]
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
